@@ -1,4 +1,6 @@
 module.exports = {
-  publicPath: '/ipld-schema-app/'
+  publicPath: process.env.NODE_ENV === 'production'
+    ? '/ipld-schema-app/'
+    : '/'
 }
   

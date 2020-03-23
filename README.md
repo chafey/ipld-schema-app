@@ -14,6 +14,11 @@ npm install
 npm run serve
 ```
 
+### Updating gh-pages branch
+```
+./build.sh
+```
+
 ### Compiles and minifies for production
 ```
 npm run build
@@ -27,5 +32,4 @@ npm run lint
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
-### Updating gh-pages branch
-[instructions](https://medium.com/@Roli_Dori/deploy-vue-cli-3-project-to-github-pages-ebeda0705fbd)
+
