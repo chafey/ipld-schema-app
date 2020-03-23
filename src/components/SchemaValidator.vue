@@ -1,7 +1,8 @@
 <template>
   <div>
     <prism-editor 
-      :code="schema" 
+      class="schema-validator"
+      v-model="schema" 
       :emitEvents=true 
       :lineNumbers=true
       @change="onChange" 

@@ -6,7 +6,7 @@
       Paste IPLD schema below
       </p>
     </section>
-    <SchemaValidator/>
+    <SchemaValidator class="h-75"/>
   </div>
 </template>
 
