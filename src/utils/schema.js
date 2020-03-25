@@ -1,19 +1,52 @@
-const schema = `advanced FunkyBytes
+const schema = `# https://github.com/ipld/specs/blob/01f19b1f4234a9528c618756b7e9c24b4d499b7c/schema-layer/data-structures/hashmap.md
 
-#comment 
-advanced FunkyVector
+#
+# type HashMap map { Key : Value } representation HashMap
+#
+# advanced HashMap {
+#   kind map
+#   implementation "IPLD/HAMT/1"
+#   rootType HashMapRoot
+# }
+#
 
-type MyFunkyBytes bytes representation advanced FunkyBytes
+# Root node layout
+type HashMapRoot struct {
+  hashAlg String
+  bitWidth Int
+  bucketSize Int
+  map Bytes
+  data [ Element ]
+}
 
-type MyFunkyVector [&MyFunkyBytes] representation advanced FunkyVector
+# Non-root node layout
+type HashMapNode struct {
+  map Bytes
+  data [ Element ]
+}
 
-type ADLExample struct {
-	fooField optional {String:MyFunkyBytes} (rename "foo_field")
-	barField nullable {String:String}
-	bazField {String : nullable MyFunkyBytes}
-	wozField {String:[nullable String]}
-	boomField &ExampleWithNullable
-  funkyField MyFunkyVector
-} representation map`
+type Element union {
+  | HashMapNode map
+  | &HashMapNode link
+  | Bucket list
+} representation kinded
+
+type Bucket list [ BucketEntry ]
+
+type BucketEntry struct {
+  key Bytes
+  value Value (implicit "null")
+} representation tuple
+
+type Value union {
+  | Bool bool
+  | String string
+  | Bytes bytes
+  | Int int
+  | Float float
+  | Map map
+  | List list
+  | Link link
+} representation kinded`
 
 export default schema

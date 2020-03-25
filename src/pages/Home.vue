@@ -1,12 +1,9 @@
 <template>
   <div>
-    <section class="mw7 center ph3">
-      <h1 class="mt4">IPLD Schema Validator</h1>
-      <p class="f4 fw5 lh-copy ma0 pb3">
-      Paste IPLD schema below
-      </p>
+    <section class="mw7 center ph3" style="height:100px">
+      <h1 class="mt4">IPLD Schema Editor</h1>
     </section>
-    <SchemaValidator class="h-75"/>
+    <SchemaValidator style="height:calc(100% - 100px)"/>
   </div>
 </template>
 
