@@ -11,7 +11,7 @@
     "core-js": "^3.6.4",
     "ipfs-css": "^0.13.1",
     "ipld-schema": "^0.3.2",
-    "prismjs": "^1.19.0",
+    "prismjs": "^1.27.0",
     "tachyons": "^4.11.1",
     "vue": "^2.6.11",
     "vue-prism-editor": "^0.5.1"
